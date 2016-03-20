@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  get 'contact/contactUs'
+  resources :profiles, only: [:edit, :update]
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
+  get 'parking/ourParking'
 
-  get 'crew/ourParking'
+  get 'contact/contactUs'
 
   get 'about/aboutUs'
 
-  get 'home/index'
+  #get 'home/index'
+  root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
