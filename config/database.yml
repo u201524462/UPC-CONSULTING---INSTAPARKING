@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: insta-parking-sprint2_development
+  database: insta-parking-sprint4_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: insta-parking-sprint2_test
+  database: insta-parking-sprint4_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: insta-parking-sprint2_production
-  username: insta-parking-sprint2
-  password: <%= ENV['INSTA-PARKING-SPRINT2_DATABASE_PASSWORD'] %>
+  database: insta-parking-sprint4_production
+  username: insta-parking-sprint4
+  password: <%= ENV['INSTA-PARKING-SPRINT4_DATABASE_PASSWORD'] %>
