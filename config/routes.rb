@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :estacionamientos
+  resources :automovils
+  resources :usuarios
   resources :profiles, only: [:edit, :update]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
