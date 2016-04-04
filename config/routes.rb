@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :places
   resources :commissions
   resources :districts
   resources :vehicle_types

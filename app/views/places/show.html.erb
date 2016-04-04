@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @place.name %>
+</p>
+
+<p>
+  <strong>Districts:</strong>
+  <%= @place.districts %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @place.address %>
+</p>
+
+<p>
+  <strong>Vehicle type:</strong>
+  <%= @place.vehicle_type %>
+</p>
+
+<p>
+  <strong>Vehicle type small price:</strong>
+  <%= @place.vehicle_type_small_price %>
+</p>
+
+<p>
+  <strong>Vehicle type medium price:</strong>
+  <%= @place.vehicle_type_medium_price %>
+</p>
+
+<p>
+  <strong>Vehicle type big price:</strong>
+  <%= @place.vehicle_type_big_price %>
+</p>
+
+<p>
+  <strong>Extra features string:</strong>
+  <%= @place.extra_features_string %>
+</p>
+
+<p>
+  <strong>Flag:</strong>
+  <%= @place.flag %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

@@ -1,0 +1,19 @@
+<%= simple_form_for(@place) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.association :districts %>
+    <%= f.input :address %>
+    <%= f.association :vehicle_type %>
+    <%= f.input :vehicle_type_small_price %>
+    <%= f.input :vehicle_type_medium_price %>
+    <%= f.input :vehicle_type_big_price %>
+    <%= f.input :extra_features_string %>
+    <%= f.input :flag %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

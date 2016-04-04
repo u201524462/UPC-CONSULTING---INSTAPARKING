@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  districts_id: 
+  address: MyText
+  vehicle_type_id: 
+  vehicle_type_small_price: 9.99
+  vehicle_type_medium_price: 9.99
+  vehicle_type_big_price: 9.99
+  extra_features_string: MyString
+  flag: MyText
+
+two:
+  name: MyText
+  districts_id: 
+  address: MyText
+  vehicle_type_id: 
+  vehicle_type_small_price: 9.99
+  vehicle_type_medium_price: 9.99
+  vehicle_type_big_price: 9.99
+  extra_features_string: MyString
+  flag: MyText
