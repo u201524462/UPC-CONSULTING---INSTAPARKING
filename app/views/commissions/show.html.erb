@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @commission.type %>
+</p>
+
+<p>
+  <strong>Vehicle type:</strong>
+  <%= @commission.vehicle_type %>
+</p>
+
+<p>
+  <strong>Districts:</strong>
+  <%= @commission.districts %>
+</p>
+
+<p>
+  <strong>Flag:</strong>
+  <%= @commission.flag %>
+</p>
+
+<%= link_to 'Edit', edit_commission_path(@commission) %> |
+<%= link_to 'Back', commissions_path %>
