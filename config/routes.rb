@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reservations
   resources :places
   resources :commissions
   resources :districts

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  districts_id: 
+  vehicle_type_id: 
+  places_id: 
+  start_date: 2016-04-04
+  end_date: 2016-04-04
+  start_time: 2016-04-04 23:17:51
+  end_time: 2016-04-04 23:17:51
+  price: 9.99
+  flag: MyText
+
+two:
+  districts_id: 
+  vehicle_type_id: 
+  places_id: 
+  start_date: 2016-04-04
+  end_date: 2016-04-04
+  start_time: 2016-04-04 23:17:51
+  end_time: 2016-04-04 23:17:51
+  price: 9.99
+  flag: MyText
