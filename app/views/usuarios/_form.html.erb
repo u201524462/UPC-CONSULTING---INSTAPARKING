@@ -1,0 +1,21 @@
+<%= simple_form_for(@usuario) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :Codigo_Usuario %>
+    <%= f.input :Nickname %>
+    <%= f.input :Password %>
+    <%= f.input :Nombres_usuario %>
+    <%= f.input :Apellidos_usuario %>
+    <%= f.input :Correo_usuario %>
+    <%= f.input :Telefono_usuario %>
+    <%= f.input :Estado_usuario %>
+    <%= f.input :Tipo_usuario %>
+    <%= f.input :Fecha_Creacion_usuario %>
+    <%= f.input :Fecha_Actualizacion_usuario %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

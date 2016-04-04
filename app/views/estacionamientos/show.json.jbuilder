@@ -1,0 +1,1 @@
+json.extract! @estacionamiento, :id, :Direccion_esta, :Departamento_esta, :Disponibilidad_esta, :Codigo_esta, :Tipo_esta, :Tipo_alquiler_esta, :Tarifa_esta, :Otras_caracteristicas, :created_at, :updated_at

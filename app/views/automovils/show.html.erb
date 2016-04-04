@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Placa auto:</strong>
+  <%= @automovil.Placa_auto %>
+</p>
+
+<p>
+  <strong>Marca auto:</strong>
+  <%= @automovil.Marca_auto %>
+</p>
+
+<p>
+  <strong>Modelo auto:</strong>
+  <%= @automovil.Modelo_auto %>
+</p>
+
+<p>
+  <strong>Color auto:</strong>
+  <%= @automovil.Color_auto %>
+</p>
+
+<p>
+  <strong>Fecha registro auto:</strong>
+  <%= @automovil.Fecha_Registro_auto %>
+</p>
+
+<%= link_to 'Edit', edit_automovil_path(@automovil) %> |
+<%= link_to 'Back', automovils_path %>

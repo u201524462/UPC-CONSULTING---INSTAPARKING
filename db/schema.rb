@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320172240) do
+ActiveRecord::Schema.define(version: 20160401161331) do
+
+  create_table "automovils", force: :cascade do |t|
+    t.string   "Placa_auto",          limit: 255
+    t.string   "Marca_auto",          limit: 255
+    t.string   "Modelo_auto",         limit: 255
+    t.string   "Color_auto",          limit: 255
+    t.date     "Fecha_Registro_auto"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  create_table "estacionamientos", force: :cascade do |t|
+    t.string   "Direccion_esta",        limit: 255
+    t.string   "Departamento_esta",     limit: 255
+    t.integer  "Disponibilidad_esta",   limit: 4
+    t.integer  "Codigo_esta",           limit: 4
+    t.integer  "Tipo_esta",             limit: 4
+    t.string   "Tipo_alquiler_esta",    limit: 255
+    t.integer  "Tarifa_esta",           limit: 4
+    t.string   "Otras_caracteristicas", limit: 255
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name", limit: 255
@@ -62,6 +85,22 @@ ActiveRecord::Schema.define(version: 20160320172240) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "usuarios", force: :cascade do |t|
+    t.integer  "Codigo_Usuario",              limit: 4
+    t.string   "Nickname",                    limit: 255
+    t.string   "Password",                    limit: 255
+    t.string   "Nombres_usuario",             limit: 255
+    t.string   "Apellidos_usuario",           limit: 255
+    t.string   "Correo_usuario",              limit: 255
+    t.string   "Telefono_usuario",            limit: 255
+    t.integer  "Estado_usuario",              limit: 4
+    t.integer  "Tipo_usuario",                limit: 4
+    t.date     "Fecha_Creacion_usuario"
+    t.date     "Fecha_Actualizacion_usuario"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+  end
 
   add_foreign_key "profiles", "users"
 end

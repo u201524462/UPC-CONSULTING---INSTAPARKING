@@ -1,0 +1,18 @@
+<%= simple_form_for(@estacionamiento) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :Direccion_esta %>
+    <%= f.input :Departamento_esta %>
+    <%= f.input :Disponibilidad_esta %>
+    <%= f.input :Codigo_esta %>
+    <%= f.input :Tipo_esta %>
+    <%= f.input :Tipo_alquiler_esta %>
+    <%= f.input :Tarifa_esta %>
+    <%= f.input :Otras_caracteristicas %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Placa_auto: MyString
+  Marca_auto: MyString
+  Modelo_auto: MyString
+  Color_auto: MyString
+  Fecha_Registro_auto: 2016-04-01
+
+two:
+  Placa_auto: MyString
+  Marca_auto: MyString
+  Modelo_auto: MyString
+  Color_auto: MyString
+  Fecha_Registro_auto: 2016-04-01

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Direccion_esta: MyString
+  Departamento_esta: MyString
+  Disponibilidad_esta: 1
+  Codigo_esta: 1
+  Tipo_esta: 1
+  Tipo_alquiler_esta: MyString
+  Tarifa_esta: 1
+  Otras_caracteristicas: MyString
+
+two:
+  Direccion_esta: MyString
+  Departamento_esta: MyString
+  Disponibilidad_esta: 1
+  Codigo_esta: 1
+  Tipo_esta: 1
+  Tipo_alquiler_esta: MyString
+  Tarifa_esta: 1
+  Otras_caracteristicas: MyString
