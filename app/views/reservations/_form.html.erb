@@ -1,19 +1,29 @@
-<%= simple_form_for(@reservation) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for(@reservation), :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :pickupdate %>
+  <%= error_span(@reservation[:pickupdate]) %>
+  <%= f.input :pickuptime %>
+  <%= error_span(@reservation[:pickuptime]) %>
+  <%= f.input :origin %>
+  <%= error_span(@reservation[:origin]) %>
+  <%= f.input :destiny %>
+  <%= error_span(@reservation[:destiny]) %>
+  <%= f.input :status, :as => :hidden, :input_html => { :value => 'ACT' } %>
+  <%= error_span(@reservation[:status]) %>
+  <%= f.input :npassengers, :label => "Number of Passengers", :placeholder =>   "" %>
+  <%= error_span(@reservation[:npassengers]) %>
+  <%= f.input :price %>
+  <%= error_span(@reservation[:price]) %>
+  <%= f.input :currency %>
+  <%= error_span(@reservation[:currency]) %>
+  <%= f.association :profile %>
+  <%= error_span(@reservation[:profile_id]) %>
+  <%= f.association :vehicle %>
+  <%= error_span(@reservation[:vehicle_id]) %>
+  <%= f.association :service %>
+  <%= error_span(@reservation[:service_id]) %>
 
-  <div class="form-inputs">
-    <%= f.association :districts %>
-    <%= f.association :vehicle_type %>
-    <%= f.association :places %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
-    <%= f.input :price %>
-    <%= f.input :flag %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                reservations_path(@profile, @vehicle, @service), :class => 'btn btn-default' %>
 <% end %>
