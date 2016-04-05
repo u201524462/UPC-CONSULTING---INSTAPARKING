@@ -11,7 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401161331) do
+ActiveRecord::Schema.define(version: 20160404231751) do
+
+  create_table "commissions", force: :cascade do |t|
+    t.text     "type",            limit: 65535
+    t.integer  "vehicle_type_id", limit: 4
+    t.integer  "district_id",     limit: 4
+    t.text     "flag",            limit: 65535
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "commissions", ["district_id"], name: "index_commissions_on_district_id", using: :btree
+  add_index "commissions", ["vehicle_type_id"], name: "index_commissions_on_vehicle_type_id", using: :btree
+
+  create_table "districts", force: :cascade do |t|
+    t.text     "name",        limit: 65535
+    t.text     "description", limit: 65535
+    t.text     "flag",        limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.text     "name",                      limit: 65535
+    t.integer  "district_id",               limit: 4
+    t.text     "address",                   limit: 65535
+    t.integer  "vehicle_type_id",           limit: 4
+    t.decimal  "vehicle_type_small_price",                precision: 10
+    t.decimal  "vehicle_type_medium_price",               precision: 10
+    t.decimal  "vehicle_type_big_price",                  precision: 10
+    t.string   "extra_features_string",     limit: 255
+    t.text     "flag",                      limit: 65535
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
+  end
+
+  add_index "places", ["district_id"], name: "index_places_on_district_id", using: :btree
+  add_index "places", ["vehicle_type_id"], name: "index_places_on_vehicle_type_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name", limit: 255
@@ -23,6 +60,24 @@ ActiveRecord::Schema.define(version: 20160401161331) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "district_id",     limit: 4
+    t.integer  "vehicle_type_id", limit: 4
+    t.integer  "place_id",        limit: 4
+    t.date     "start_date"
+    t.date     "end_date"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.decimal  "price",                         precision: 10
+    t.text     "flag",            limit: 65535
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
+
+  add_index "reservations", ["district_id"], name: "index_reservations_on_district_id", using: :btree
+  add_index "reservations", ["place_id"], name: "index_reservations_on_place_id", using: :btree
+  add_index "reservations", ["vehicle_type_id"], name: "index_reservations_on_vehicle_type_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
@@ -63,5 +118,21 @@ ActiveRecord::Schema.define(version: 20160401161331) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "vehicle_types", force: :cascade do |t|
+    t.text     "short_description", limit: 65535
+    t.text     "long_description",  limit: 65535
+    t.text     "flag1",             limit: 65535
+    t.text     "flag2",             limit: 65535
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_foreign_key "commissions", "districts"
+  add_foreign_key "commissions", "vehicle_types"
+  add_foreign_key "places", "districts"
+  add_foreign_key "places", "vehicle_types"
   add_foreign_key "profiles", "users"
+  add_foreign_key "reservations", "districts"
+  add_foreign_key "reservations", "places"
+  add_foreign_key "reservations", "vehicle_types"
 end

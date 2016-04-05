@@ -39,7 +39,7 @@
   </head>
   <body>
 
-    <div class="navbar navbar-default navbar-static-top">
+    <div class="navbar navbar-default navbar-static-top navbar-inverse nav-bar-xpress">
       <div class="container">
         <%= render 'layouts/authentication' %>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -50,7 +50,15 @@
         <a class="navbar-brand" href="#">InstaParking</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <%= render 'layouts/menu' %>
+            <% if current_user %>
+              <% if current_user.admin %>
+                <%= render 'layouts/menu_admin' %>
+              <% else %>
+                <%= render 'layouts/menu_customer' %>
+              <% end %>
+            <% else %>
+              <%= render 'layouts/menu' %>
+            <% end %>
           </ul>
         </div>
       </div>
