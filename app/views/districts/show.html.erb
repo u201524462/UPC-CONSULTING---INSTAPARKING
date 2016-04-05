@@ -5,15 +5,15 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @driver.name %></dd>
+  <dd><%= @district.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @driver.description %></dd>
+  <dd><%= @district.description %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               districts_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_district_path(@driver), :class => 'btn btn-default' %>
+              edit_district_path(@district), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               district_path(@district),
               :method => 'delete',
