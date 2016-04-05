@@ -51,7 +51,7 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <% if current_user %>
-              <% if current_user.admin %>
+              <% if current_user.admin? %>
                 <%= render 'layouts/menu_admin' %>
               <% else %>
                 <%= render 'layouts/menu_customer' %>
