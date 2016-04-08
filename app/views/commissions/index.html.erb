@@ -7,21 +7,20 @@
 </div>
 
 
-<table>
+<tabl class="table table-striped"e>
   <thead>
     <tr>
-      <th>Type</th>
-      <th>Vehicle type</th>
-      <th>Districts</th>
-      <th>Flag</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id)%></th>
+      <th><%= model_class.human_attribute_name(:type)%></th>
+      <th><%= model_class.human_attribute_name(:vehicle_type_id)%></th>
+      <th><%= model_class.human_attribute_name(:district_id)%></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @commissions.each do |commission| %>
       <tr>
-        <td><%= commission.type %></td>
+        <td><%= link_to commission.id,commission_path(commission) %></td>
         <td><%= commission.vehicle_type %></td>
         <td><%= commission.districts %></td>
         <td><%= commission.flag %></td>
