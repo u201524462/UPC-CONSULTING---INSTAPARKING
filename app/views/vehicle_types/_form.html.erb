@@ -1,18 +1,3 @@
-<!--<%= simple_form_for(@vehicle_type) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :short_description %>
-    <%= f.input :long_description %>
-    <%= f.input :flag1 %>
-    <%= f.input :flag2 %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>!-->
-<!-- ----------------------------------------------------------------------------------------------!-->
 
 <%= simple_form_for @vehicle_type, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :short_description %>

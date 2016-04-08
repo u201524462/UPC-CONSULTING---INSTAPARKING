@@ -24,7 +24,7 @@
         <td><%= vehicle_type.long_description %></td>
         <td>
            <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      vehicle_type_path(vehicle_type), :class => 'btn btn-default btn-xs' %>
+                      edit_vehicle_type_path(vehicle_type), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       vehicle_type_path(vehicle_type),
                       :method => :delete,
