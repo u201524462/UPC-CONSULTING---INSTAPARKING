@@ -40,6 +40,8 @@
 <br>
 
 <!--
-<%= link_to 'New Vehicle type', new_vehicle_type_path %>
-!-->
+<%= link_to 'New Vehicle type', new_vehicle_type_path %>!-->
 
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_vehicle_type_path,
+            :class => 'btn btn-primary' %>
