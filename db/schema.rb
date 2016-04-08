@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160404231751) do
     t.text     "type",            limit: 65535
     t.integer  "vehicle_type_id", limit: 4
     t.integer  "district_id",     limit: 4
-    t.text     "flag",            limit: 65535
+    t.text     "flag",            limit: 65535,   default: 1
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160404231751) do
   create_table "districts", force: :cascade do |t|
     t.text     "name",        limit: 65535
     t.text     "description", limit: 65535
-    t.text     "flag",        limit: 65535
+    t.text     "flag",        limit: 65535,   default: 1
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160404231751) do
     t.decimal  "vehicle_type_medium_price",               precision: 10
     t.decimal  "vehicle_type_big_price",                  precision: 10
     t.string   "extra_features_string",     limit: 255
-    t.text     "flag",                      limit: 65535
+    t.text     "flag",                      limit: 65535,   default: 1
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false
   end
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20160404231751) do
     t.time     "start_time"
     t.time     "end_time"
     t.decimal  "price",                         precision: 10
-    t.text     "flag",            limit: 65535
+    t.text     "flag",            limit: 65535,   default: 1
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -121,8 +121,8 @@ ActiveRecord::Schema.define(version: 20160404231751) do
   create_table "vehicle_types", force: :cascade do |t|
     t.text     "short_description", limit: 65535
     t.text     "long_description",  limit: 65535
-    t.text     "flag1",             limit: 65535
-    t.text     "flag2",             limit: 65535
+    t.text     "flag1",             limit: 65535,   default: 1
+    t.text     "flag2",             limit: 65535,   default: 1
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end
