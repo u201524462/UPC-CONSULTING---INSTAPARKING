@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(version: 20160404231751) do
 
   create_table "commissions", force: :cascade do |t|
-    t.text     "type",          limit: 50
-    t.integer  "vehicle_type_id", limit: 2
-    t.integer  "district_id",     limit: 2
-    t.integer  "flag",            limit: 1,   default: 1
+    t.text     "type",            limit: 65535
+    t.integer  "vehicle_type_id", limit: 4
+    t.integer  "district_id",     limit: 4
+    t.text     "flag",            limit: 65535
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
   end
@@ -26,23 +26,23 @@ ActiveRecord::Schema.define(version: 20160404231751) do
   add_index "commissions", ["vehicle_type_id"], name: "index_commissions_on_vehicle_type_id", using: :btree
 
   create_table "districts", force: :cascade do |t|
-    t.text     "name",        limit: 100
-    t.text     "description", limit: 250
-    t.integer  "flag",        limit: 1,   default: 1
+    t.text     "name",        limit: 65535
+    t.text     "description", limit: 65535
+    t.text     "flag",        limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
 
   create_table "places", force: :cascade do |t|
-    t.text     "name",                      limit: 200
-    t.integer  "district_id",               limit: 2
-    t.text     "address",                   limit: 250
-    t.integer  "vehicle_type_id",           limit: 2
+    t.text     "name",                      limit: 65535
+    t.integer  "district_id",               limit: 4
+    t.text     "address",                   limit: 65535
+    t.integer  "vehicle_type_id",           limit: 4
     t.decimal  "vehicle_type_small_price",                precision: 10
     t.decimal  "vehicle_type_medium_price",               precision: 10
     t.decimal  "vehicle_type_big_price",                  precision: 10
     t.string   "extra_features_string",     limit: 255
-    t.integer  "flag",                      limit: 1,   default: 1
+    t.text     "flag",                      limit: 65535
     t.datetime "created_at",                                             null: false
     t.datetime "updated_at",                                             null: false
   end
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20160404231751) do
   add_index "places", ["vehicle_type_id"], name: "index_places_on_vehicle_type_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "first_name", limit: 100
-    t.string   "last_name",  limit: 100
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
     t.datetime "born_at"
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",             null: false
@@ -62,15 +62,15 @@ ActiveRecord::Schema.define(version: 20160404231751) do
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "reservations", force: :cascade do |t|
-    t.integer  "district_id",     limit: 2
-    t.integer  "vehicle_type_id", limit: 2
-    t.integer  "place_id",        limit: 2
+    t.integer  "district_id",     limit: 4
+    t.integer  "vehicle_type_id", limit: 4
+    t.integer  "place_id",        limit: 4
     t.date     "start_date"
     t.date     "end_date"
     t.time     "start_time"
     t.time     "end_time"
-    t.decimal  "price",                         precision: 2
-    t.integer  "flag",            limit: 1,   default: 1
+    t.decimal  "price",                         precision: 10
+    t.text     "flag",            limit: 65535
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
   end
@@ -100,29 +100,29 @@ ActiveRecord::Schema.define(version: 20160404231751) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 100, default: "", null: false
-    t.string   "encrypted_password",     limit: 30, default: "", null: false
-    t.string   "reset_password_token",   limit: 20
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 3,   default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 100
-    t.string   "last_sign_in_ip",        limit: 100
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
-    t.integer  "role",                   limit: 1
+    t.integer  "role",                   limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vehicle_types", force: :cascade do |t|
-    t.text     "short_description", limit: 100
-    t.text     "long_description",  limit: 250
-    t.integer  "flag1",             limit: 1,   default: 1
-    t.integer  "flag2",             limit: 1,   default: 1
+    t.text     "short_description", limit: 65535
+    t.text     "long_description",  limit: 65535
+    t.text     "flag1",             limit: 65535
+    t.text     "flag2",             limit: 65535
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end
