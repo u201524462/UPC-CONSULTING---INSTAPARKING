@@ -1,6 +1,11 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>
 
-<h1>Listing Commissions</h1>
+<h1>Listing Commissions</h1>!-->
+<%- model_class = Commission -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
 
 <table>
   <thead>
