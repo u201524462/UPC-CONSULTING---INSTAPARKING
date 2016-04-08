@@ -1,4 +1,4 @@
 class Commission < ActiveRecord::Base
   belongs_to :vehicle_type
-  belongs_to :districts
+  belongs_to :district
 end
