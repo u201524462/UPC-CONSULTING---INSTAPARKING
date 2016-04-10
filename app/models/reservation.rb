@@ -1,5 +1,5 @@
 class Reservation < ActiveRecord::Base
-  belongs_to :districts
+  belongs_to :district
   belongs_to :vehicle_type
-  belongs_to :places
+  belongs_to :place
 end

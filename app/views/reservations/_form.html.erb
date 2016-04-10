@@ -1,9 +1,9 @@
-<%= simple_form_for(@reservation), :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @reservation, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.association :district %>
   <%= error_span(@reservation[:districts_id]) %>
   <%= f.association :vehicle_type %>
   <%= error_span(@reservation[:vehicle_type_id]) %>
-  <%= f.association :places %>
+  <%= f.association :place %>
   <%= error_span(@reservation[:place_id]) %>
   <%= f.input :start_date %>
   <%= error_span(@reservation[:start_date]) %>
