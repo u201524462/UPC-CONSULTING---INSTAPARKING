@@ -1,49 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Reservation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Districts:</strong>
-  <%= @reservation.districts %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:district_id) %>:</strong></dt>
+  <dd><%= @reservation.district_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vehicle_type_id) %>:</strong></dt>
+  <dd><%= @reservation.vehicle_type_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:place_id) %>:</strong></dt>
+  <dd><%= @reservation.place_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_date) %>:</strong></dt>
+  <dd><%= @reservation.start_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong></dt>
+  <dd><%= @reservation.end_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_time) %>:</strong></dt>
+  <dd><%= @reservation.start_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_time) %>:</strong></dt>
+  <dd><%= @reservation.end_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @reservation.price %></dd>
+</dl>
 
-<p>
-  <strong>Vehicle type:</strong>
-  <%= @reservation.vehicle_type %>
-</p>
-
-<p>
-  <strong>Places:</strong>
-  <%= @reservation.places %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @reservation.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @reservation.end_date %>
-</p>
-
-<p>
-  <strong>Start time:</strong>
-  <%= @reservation.start_time %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= @reservation.end_time %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @reservation.price %>
-</p>
-
-<p>
-  <strong>Flag:</strong>
-  <%= @reservation.flag %>
-</p>
-
-<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
-<%= link_to 'Back', reservations_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              reservations_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_reservation_path(@reservation), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              reservations_path(@reservation),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

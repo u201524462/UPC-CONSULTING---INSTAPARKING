@@ -3,8 +3,8 @@
   <%= error_span(@commission[:com_type]) %>
   <%= f.association :vehicle_type %>
   <%= error_span(@commission[:vehicle_type_id]) %>
-  <%= f.association :district %> 
-  <%= error_span(@commission[:districts_id]) %> 
+  <%= f.association :places %> 
+  <%= error_span(@commission[:place_id]) %> 
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
