@@ -7,9 +7,9 @@
   <dt><strong><%= model_class.human_attribute_name(:com_type) %>:</strong></dt>
   <dd><%= @commission.com_type %></dd>
   <dt><strong><%= model_class.human_attribute_name(:vehicle_type_id) %>:</strong></dt>
-  <dd><%= @commission.vehicle_type_id %></dd>
+  <dd><%= @commission.vehicle_type.short_description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:district_id) %>:</strong></dt>
-  <dd><%= @commission.district_id %></dd>
+  <dd><%= @commission.district.description %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
