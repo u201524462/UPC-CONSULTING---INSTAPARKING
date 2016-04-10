@@ -17,8 +17,8 @@
       <tr>
         <td><%= link_to commission.id, commission_path(commission) %></td>
         <td><%= commission.com_type %></td>
-        <td><%= commission.vehicle_type_id %></td>
-        <td><%= commission.district_id %></td>
+        <td><%= commission.vehicle_type.short_description %></td>
+        <td><%= commission.district.description %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_commission_path(commission), :class => 'btn btn-default btn-xs' %>
