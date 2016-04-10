@@ -1,43 +1,51 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Places</h1>
-
-<table>
+<%- model_class = Place -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Districts</th>
-      <th>Address</th>
-      <th>Vehicle type</th>
-      <th>Vehicle type small price</th>
-      <th>Vehicle type medium price</th>
-      <th>Vehicle type big price</th>
-      <th>Extra features string</th>
-      <th>Flag</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:district_id) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:vehicle_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:vehicle_type_small_price) %></th>
+      <th><%= model_class.human_attribute_name(:vehicle_type_medium_price) %></th>
+      <th><%= model_class.human_attribute_name(:vehicle_type_big_price) %></th>
+      <th><%= model_class.human_attribute_name(:extra_features_string) %></th>
+      <th><%= model_class.human_attribute_name(:flag) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @places.each do |place| %>
       <tr>
+        <td><%= link_to place.id, place_path(place) %></td>
         <td><%= place.name %></td>
-        <td><%= place.districts %></td>
+        <td><%= place.district_id %></td>
         <td><%= place.address %></td>
-        <td><%= place.vehicle_type %></td>
+        <td><%= place.vehicle_type_id %></td>
         <td><%= place.vehicle_type_small_price %></td>
         <td><%= place.vehicle_type_medium_price %></td>
         <td><%= place.vehicle_type_big_price %></td>
         <td><%= place.extra_features_string %></td>
         <td><%= place.flag %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_place_path(place), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      place_path(place),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Place', new_place_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_place_path,
+            :class => 'btn btn-primary' %>

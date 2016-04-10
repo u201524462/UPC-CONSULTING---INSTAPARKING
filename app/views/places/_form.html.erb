@@ -1,3 +1,4 @@
+<!--
 <%= simple_form_for(@place) do |f| %>
   <%= f.error_notification %>
 
@@ -16,4 +17,27 @@
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+<% end %>
+--!>
+
+<%= simple_form_for @place, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@place[:name]) %>
+  <%= f.input :district_id %>
+  <%= error_span(@place[:district_id]) %>
+  <%= f.input :vehicle_type_id %>
+  <%= error_span(@place[:vehicle_type_id]) %>
+  <%= f.input :vehicle_type_small_price %>
+  <%= error_span(@place[:vehicle_type_small_price]) %>
+  <%= f.input :vehicle_type_medium_price %>
+  <%= error_span(@place[:vehicle_type_medium_price]) %>
+  <%= f.input :vehicle_type_big_price %>
+  <%= error_span(@place[:vehicle_type_big_price]) %>
+  <%= f.input :extra_features_string %>
+  <%= error_span(@place[:extra_features_string]) %>
+  <%= f.input :flag %>
+  <%= error_span(@place[:flag]) %>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                districts_path, :class => 'btn btn-default' %>
 <% end %>
