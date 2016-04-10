@@ -18,7 +18,7 @@ class CommissionsControllerTest < ActionController::TestCase
 
   test "should create commission" do
     assert_difference('Commission.count') do
-      post :create, commission: { districts_id: @commission.districts_id, flag: @commission.flag, type: @commission.type, vehicle_type_id: @commission.vehicle_type_id }
+      post :create, commission: { com_type: @commission.com_type, district_id: @commission.district_id, flag: @commission.flag, vehicle_types_id: @commission.vehicle_types_id }
     end
 
     assert_redirected_to commission_path(assigns(:commission))
@@ -35,7 +35,7 @@ class CommissionsControllerTest < ActionController::TestCase
   end
 
   test "should update commission" do
-    patch :update, id: @commission, commission: { districts_id: @commission.districts_id, flag: @commission.flag, type: @commission.type, vehicle_type_id: @commission.vehicle_type_id }
+    patch :update, id: @commission, commission: { com_type: @commission.com_type, district_id: @commission.district_id, flag: @commission.flag, vehicle_types_id: @commission.vehicle_types_id }
     assert_redirected_to commission_path(assigns(:commission))
   end
 

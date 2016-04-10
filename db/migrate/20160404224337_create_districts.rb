@@ -1,9 +1,9 @@
 class CreateDistricts < ActiveRecord::Migration
   def change
     create_table :districts do |t|
-      t.text :name
-      t.text :description
-      t.text :flag
+      t.string :name
+      t.string :description
+      t.string :flag
 
       t.timestamps null: false
     end

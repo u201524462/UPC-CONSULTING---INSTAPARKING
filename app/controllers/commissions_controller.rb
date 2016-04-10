@@ -69,6 +69,6 @@ class CommissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commission_params
-      params.require(:commission).permit(:type, :vehicle_type_id, :districts_id, :flag)
+      params.require(:commission).permit(:com_type, :vehicle_types_id, :district_id, :flag)
     end
 end

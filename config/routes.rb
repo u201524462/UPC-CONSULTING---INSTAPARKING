@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :commissions
   resources :reservations
   resources :places
-  resources :commissions
   resources :districts
   resources :vehicle_types
   resources :profiles, only: [:edit, :update]

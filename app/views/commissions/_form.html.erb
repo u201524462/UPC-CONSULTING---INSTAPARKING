@@ -1,6 +1,6 @@
 <%= simple_form_for @commission, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :type %>
-  <%= error_span(@commission[:type]) %>
+  <%= f.input :com_type %>
+  <%= error_span(@commission[:com_type]) %>
   <%= f.association :vehicle_type %>
   <%= error_span(@commission[:vehicle_type_id]) %>
   <%= f.association :district %> 

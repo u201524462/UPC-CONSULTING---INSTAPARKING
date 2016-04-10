@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:com_type) %></th>
       <th><%= model_class.human_attribute_name(:vehicle_type_id) %></th>
       <th><%= model_class.human_attribute_name(:district_id) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -16,7 +16,7 @@
     <% @commissions.each do |commission| %>
       <tr>
         <td><%= link_to commission.id, commission_path(commission) %></td>
-        <td><%= commission.type %></td>
+        <td><%= commission.com_type %></td>
         <td><%= commission.vehicle_type_id %></td>
         <td><%= commission.district_id %></td>
         <td>

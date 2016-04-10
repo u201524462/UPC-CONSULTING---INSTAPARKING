@@ -9,7 +9,7 @@ class CreateReservations < ActiveRecord::Migration
       t.time :start_time
       t.time :end_time
       t.decimal :price
-      t.text :flag
+      t.string :flag
 
       t.timestamps null: false
     end

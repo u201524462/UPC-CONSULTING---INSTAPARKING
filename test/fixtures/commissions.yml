@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: MyText
-  vehicle_type_id: 
-  districts_id: 
-  flag: MyText
+  com_type: MyString
+  vehicle_types_id: 
+  district_id: 
+  flag: MyString
 
 two:
-  type: MyText
-  vehicle_type_id: 
-  districts_id: 
-  flag: MyText
+  com_type: MyString
+  vehicle_types_id: 
+  district_id: 
+  flag: MyString

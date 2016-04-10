@@ -1,10 +1,10 @@
 class CreateVehicleTypes < ActiveRecord::Migration
   def change
     create_table :vehicle_types do |t|
-      t.text :short_description
-      t.text :long_description
-      t.text :flag1
-      t.text :flag2
+      t.string :short_description
+      t.string :long_description
+      t.string :flag1
+      t.string :flag2
 
       t.timestamps null: false
     end

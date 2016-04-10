@@ -4,20 +4,20 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
-  <dd><%= @district.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:com_type) %>:</strong></dt>
+  <dd><%= @commission.com_type %></dd>
   <dt><strong><%= model_class.human_attribute_name(:vehicle_type_id) %>:</strong></dt>
-  <dd><%= @district.vehicle_type_id %></dd>
+  <dd><%= @commission.vehicle_type_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:district_id) %>:</strong></dt>
-  <dd><%= @district.district_id %></dd>
+  <dd><%= @commission.district_id %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              comissions_path, :class => 'btn btn-default'  %>
+              commissions_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_comission_path(@comission), :class => 'btn btn-default' %>
+              edit_commission_path(@commission), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              comissions_path(@comission),
+              commissions_path(@commission),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
