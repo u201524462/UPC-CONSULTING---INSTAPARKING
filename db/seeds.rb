@@ -50,5 +50,32 @@
     District.create(name: 'SQL', description: 'Surquillo', flag:'0', created_at:'24/12/1990', updated_at:'24/12/1990')
     District.create(name: 'VES', description: 'Villa el Salvador', flag:'0', created_at:'24/12/1990', updated_at:'24/12/1990')
     District.create(name: 'VMT', description: 'Villa Maria del Triunfo', flag:'0', created_at:'24/12/1990', updated_at:'24/12/1990')
-    User.create(email: 'admin@upc.edu.pe', encrypted_password:'$2a$10$3UIPD22V6WKYqntbQS9zK.hN/pqL1OttIJefBUq5Gr2cx6SoIquDG',reset_password_token: 'null',reset_password_sent_at:'2016-04-05 03:43:38',remember_created_at:'2016-04-05 03:43:38',sign_in_count:2,current_sign_in_at:'2016-04-05 03:43:38',last_sign_in_at:'2016-04-05 03:39:39',current_sign_in_ip:'200.0.118.173',last_sign_in_ip:'200.0.118.173',created_at:'2016-04-05 03:39:39',updated_at:'2016-04-05 03:43:38',role:1)
-    User.create(email: 'user@upc.edu.pe', encrypted_password:'$2a$10$3UIPD22V6WKYqntbQS9zK.hN/pqL1OttIJefBUq5Gr2cx6SoIquDG',reset_password_token: 'null',reset_password_sent_at:'2016-04-05 03:43:38',remember_created_at:'2016-04-05 03:43:38',sign_in_count:2,current_sign_in_at:'2016-04-05 03:43:38',last_sign_in_at:'2016-04-05 03:39:39',current_sign_in_ip:'200.0.118.173',last_sign_in_ip:'200.0.118.173',created_at:'2016-04-05 03:39:39',updated_at:'2016-04-05 03:43:38',role:0)
+    #User.create(email: 'admin@upc.edu.pe', encrypted_password:'$2a$10$3UIPD22V6WKYqntbQS9zK.hN/pqL1OttIJefBUq5Gr2cx6SoIquDG',reset_password_token: 'null',reset_password_sent_at:'2016-04-05 03:43:38',remember_created_at:'2016-04-05 03:43:38',sign_in_count:2,current_sign_in_at:'2016-04-05 03:43:38',last_sign_in_at:'2016-04-05 03:39:39',current_sign_in_ip:'200.0.118.173',last_sign_in_ip:'200.0.118.173',created_at:'2016-04-05 03:39:39',updated_at:'2016-04-05 03:43:38',role:1)
+    #User.create(email: 'user@upc.edu.pe', encrypted_password:'$2a$10$3UIPD22V6WKYqntbQS9zK.hN/pqL1OttIJefBUq5Gr2cx6SoIquDG',reset_password_token: 'null',reset_password_sent_at:'2016-04-05 03:43:38',remember_created_at:'2016-04-05 03:43:38',sign_in_count:2,current_sign_in_at:'2016-04-05 03:43:38',last_sign_in_at:'2016-04-05 03:39:39',current_sign_in_ip:'200.0.118.173',last_sign_in_ip:'200.0.118.173',created_at:'2016-04-05 03:39:39',updated_at:'2016-04-05 03:43:38',role:0)
+    
+    #Tipos de Vehiculo
+    #Vehicle_types.create(short_description: 'Camioneta', created_at: '24/12/1990', updated_at:'24/12/1990')
+    #Vehicle_types.create(short_description: 'Auto', created_at: '24/12/1990', updated_at:'24/12/1990')
+    #Vehicle_types.create(short_description: 'Moto', created_at: '24/12/1990', updated_at:'24/12/1990')
+    #Vehicle_types.create(short_description: 'Camion', created_at: '24/12/1990', updated_at:'24/12/1990')
+    
+    #Reservaciones
+    #Reservations.create(district_id: 5, vehicle_type_id:1 ,place_id: 2)
+    #Reservations.create(district_id: 5, vehicle_type_id:1 ,place_id: 2)
+    #Reservations.create(district_id: 5, vehicle_type_id:1 ,place_id: 2)
+    #Reservations.create(district_id: 5, vehicle_type_id:1 ,place_id: 2)
+    #Reservations.create(district_id: 5, vehicle_type_id:1 ,place_id: 2)
+    #Reservations.create(district_id: 5, vehicle_type_id:1 ,place_id: 2)
+    
+    #Comisiones
+    Commissions.create(com_type:'hora',vehicle_type_id:'1',district_id:'3',flag:'1' ,created_at:'24/12/1990',updated_at:'24/12/1990')
+    Commissions.create(com_type:'hora',vehicle_type_id:'1',district_id:'3',flag:'1' ,created_at:'24/12/1990',updated_at:'24/12/1990')
+    Commissions.create(com_type:'hora',vehicle_type_id:'1',district_id:'3',flag:'1' ,created_at:'24/12/1990',updated_at:'24/12/1990')
+    Commissions.create(com_type:'hora',vehicle_type_id:'1',district_id:'3',flag:'1' ,created_at:'24/12/1990',updated_at:'24/12/1990')
+    
+    #Places
+    
+    Places.create(name:'1',district_id:'2',address:'SJM',vehicle_type_id:'2',created_at:'24/12/1990',updated_at:'24/12/1990')
+    Places.create(name:'1',district_id:'2',address:'SJM',vehicle_type_id:'2',created_at:'24/12/1990',updated_at:'24/12/1990')
+    Places.create(name:'1',district_id:'2',address:'SJM',vehicle_type_id:'2',created_at:'24/12/1990',updated_at:'24/12/1990')
+    Places.create(name:'1',district_id:'2',address:'SJM',vehicle_type_id:'2',created_at:'24/12/1990',updated_at:'24/12/1990')
