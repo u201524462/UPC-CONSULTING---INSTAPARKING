@@ -1,31 +1,13 @@
-<!--
-<%= simple_form_for(@place) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.association :districts %>
-    <%= f.input :address %>
-    <%= f.association :vehicle_type %>
-    <%= f.input :vehicle_type_small_price %>
-    <%= f.input :vehicle_type_medium_price %>
-    <%= f.input :vehicle_type_big_price %>
-    <%= f.input :extra_features_string %>
-    <%= f.input :flag %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
---!>
 
 <%= simple_form_for @place, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name, :label => "Commission Type", :placeholder =>   "" %>
+  <%= error_span(@place[:name]) %>
   <%= f.input :name %>
   <%= error_span(@place[:name]) %>
-  <%= f.input :district_id %>
+  <%= f.association :district %>
   <%= error_span(@place[:district_id]) %>
-  <%= f.input :vehicle_type_id %>
+  <%= f.association :vehicle_type %>
   <%= error_span(@place[:vehicle_type_id]) %>
   <%= f.input :vehicle_type_small_price %>
   <%= error_span(@place[:vehicle_type_small_price]) %>
