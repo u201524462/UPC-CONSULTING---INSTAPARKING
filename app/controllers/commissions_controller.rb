@@ -3,9 +3,19 @@ class CommissionsController < ApplicationController
 
   # GET /commissions
   # GET /commissions.json
-  def index
-    @commissions = Commission.all
-  end
+   def index
+      if params[:district_id]
+         district=District.find(params[:district_id])
+       # @products=Category.find(params[:category_id]).try(products)
+             if district
+                 @commissions=district.commissions
+             else
+                 @commissions=nil
+             end
+      else
+         @commissions = Commission.all
+      end
+   end
 
   # GET /commissions/1
   # GET /commissions/1.json
@@ -69,6 +79,6 @@ class CommissionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commission_params
-      params.require(:commission).permit(:com_type, :vehicle_types_id, :district_id, :flag)
+      params.require(:commission).permit(:com_type, :vehicle_type_id, :district_id, :flag)
     end
 end

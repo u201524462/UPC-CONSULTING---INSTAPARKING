@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :commissions
+  resources :commissions do
+    resources :vehicle_types
+    end
   resources :reservations
   resources :places
   resources :districts
