@@ -7,7 +7,7 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @place.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:district_id) %>:</strong></dt>
-  <dd><%= @place.district.description %></dd>
+  <dd><%= @place.district_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
   <dd><%= @place.address %></dd>
   <dt><strong><%= model_class.human_attribute_name(:vehicle_type_id) %>:</strong></dt>
@@ -20,8 +20,6 @@
   <dd><%= @place.vehicle_type_big_price %></dd>
   <dt><strong><%= model_class.human_attribute_name(:extra_features_string) %>:</strong></dt>
   <dd><%= @place.extra_features_string %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:flag) %>:</strong></dt>
-  <dd><%= @place.flag %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -22,7 +22,7 @@
       <tr>
         <td><%= link_to reservation.id, reservation_path(reservation) %></td>
         <td><%= reservation.district_id %></td>
-        <td><%= reservation.vehicle_type_id %></td>
+        <td><%= reservation.vehicle_type.short_description %></td>
         <td><%= reservation.place_id %></td>
         <td><%= reservation.start_date %></td>
         <td><%= reservation.end_date %></td>

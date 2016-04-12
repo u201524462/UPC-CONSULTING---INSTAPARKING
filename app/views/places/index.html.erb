@@ -1,4 +1,3 @@
-
 <%- model_class = Place -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
@@ -15,7 +14,6 @@
       <th><%= model_class.human_attribute_name(:vehicle_type_medium_price) %></th>
       <th><%= model_class.human_attribute_name(:vehicle_type_big_price) %></th>
       <th><%= model_class.human_attribute_name(:extra_features_string) %></th>
-      <th><%= model_class.human_attribute_name(:flag) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -31,7 +29,6 @@
         <td><%= place.vehicle_type_medium_price %></td>
         <td><%= place.vehicle_type_big_price %></td>
         <td><%= place.extra_features_string %></td>
-        <td><%= place.flag %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_place_path(place), :class => 'btn btn-default btn-xs' %>
